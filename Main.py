@@ -1,6 +1,6 @@
 __author__ = 'Martina Lupini'
 
-from Retriever import *
+from RetrieverUUCF import *
 from UUCF import *
 
 
