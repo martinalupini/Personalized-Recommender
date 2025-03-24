@@ -37,7 +37,9 @@ def create_ratings_vector(user_dict, movies_to_idx):
 
         # Creating a mask to subtract only elements different from 0
         mask = user_dict[user]["vector_ratings"] != 0
-        user_dict[user]["vector_ratings"][mask] -= avg_rating / len(movies_to_idx)
+        avg_rating = avg_rating / len(movies_to_idx)
+        user_dict[user]["vector_ratings"][mask] -= avg_rating
+        user_dict[user]["average_rating"] = avg_rating
 
 
 
