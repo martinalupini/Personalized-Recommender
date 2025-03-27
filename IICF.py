@@ -1,18 +1,18 @@
 __author__ = 'Martina Lupini'
 
-import numpy as np
-import numpy.ma as ma
 import math
 from itertools import islice
 
+
 def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
     similarities = {}
+    print("top_k_similar_items")
     for movie in user_dict[user]["Movies_rated"].keys():
         # Skipping if is the same movie as item
         if movie == item:
             continue
-        print(sim_dict.shape)
-        sim = sim_dict[int(item)-1][int(movie)-1]
+
+        sim = sim_dict[(item, movie)]
         if sim > 0:
             similarities[movie] = sim
 
@@ -26,7 +26,7 @@ def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
 
 
 def predict_score_IICF(user, item, user_dict, sim_dict):
-
+    print("predict_score_IICF")
     neighbours = top_k_similar_items(user, item, user_dict, sim_dict)
 
     if len(neighbours) == 0:
@@ -35,8 +35,7 @@ def predict_score_IICF(user, item, user_dict, sim_dict):
     numerator = 0.0
     denominator = 0.0
     for elem in neighbours:
-        print(sim_dict.shape)
-        sim = sim_dict[int(elem)-1][int(item)-1]
+        sim = sim_dict[(elem, item)]
         numerator += sim * user_dict[user]["Movies_rated"][elem]["Rating"]
         denominator += math.abs(sim)
 
@@ -45,6 +44,7 @@ def predict_score_IICF(user, item, user_dict, sim_dict):
 
 def top_N_recommendations_IICF(user, user_dict, movies_dict, sim_dict, N=10):
     recommendations = {}
+    print("top_N_recommendations_IICF")
     for movie in movies_dict:
 
         # Not suggesting movies already watched by the user

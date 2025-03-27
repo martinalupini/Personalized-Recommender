@@ -8,7 +8,7 @@ import math
 
 def retrieve_movies_IICF():
     movies_dict = {}
-
+    print("retrieve_movies_IICF")
     with open("dataset/movies.csv", "r", encoding='utf-8') as file:
         # skips the first line
         next(file)
@@ -29,9 +29,10 @@ def retrieve_movies_IICF():
 
 def compute_similarities(movies_dict):
 
-    sim_dict = np.zeros((len(movies_dict), len(movies_dict)))
-
+    sim_dict = {}
+    print("compute_similarities")
     for movie in movies_dict:
+        print(movie)
         for movie_2 in movies_dict:
 
             # No need to compute similarity for the same user
@@ -39,30 +40,30 @@ def compute_similarities(movies_dict):
                 continue
 
             # The similarity is simmetric so no need to compute it again
-            if int(movie_2) < int(movie):
-                sim_dict[int(movie)-1][int(movie_2)-1] = sim_dict[int(movie_2)-1][int(movie)-1]
+            if (movie_2, movie) in sim_dict.keys():
+                sim_dict[(movie, movie_2)] = sim_dict[(movie_2, movie)]
                 continue
 
             users_in_common = np.logical_and(movies_dict[movie]['OHE_ratings'], movies_dict[movie_2]['OHE_ratings'])
 
-            """  DO WE NEED TO INCLUDE THAT?????????????????????
             num_movies_in_common = np.count_nonzero(users_in_common)
 
             if num_movies_in_common <= 1:
-                return 0.0, 0.0
-            """
+                sim_dict[(movie, movie_2)] = 0.0
+                continue
 
             # Selecting only the ratings of the movies in common
             masked_vectors_1 = ma.masked_array(movies_dict[movie]['Ratings'], users_in_common)
             masked_vectors_2 = ma.masked_array(movies_dict[movie_2]['Ratings'], users_in_common)
 
-            numerator = np.dot(masked_vectors_1, masked_vectors_2.T)
-
-            denominator = math.sqrt(np.power(masked_vectors_1, 2).sum()) * math.sqrt(np.power(masked_vectors_2, 2).sum())
+            denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
             if denominator == 0:
-                return 0.0, 0.0
+                sim = 0.0
+            else:
+                numerator = np.dot(masked_vectors_1, masked_vectors_2.T)
+                sim = float(numerator / denominator)
 
-            sim_dict[int(movie)-1][int(movie_2)-1] = float(numerator / denominator)
+            sim_dict[(movie, movie_2)] = sim
 
     return sim_dict
 
@@ -73,6 +74,7 @@ This method adds the information about the rating to the movies saved in the dic
 """
 def retrieve_ratings_IICF(movies_dict):
     user_dict = {}
+    print("retrieve_ratings_IICF")
     with open("dataset/ratings.csv", "r", encoding='utf-8') as file:
         next(file)
         csvFile = csv.reader(file)
@@ -98,10 +100,12 @@ def retrieve_ratings_IICF(movies_dict):
             movies_dict[movie]["Ratings"] = np.zeros(100005, dtype=float)
             movies_dict[movie]["OHE_ratings"] = np.zeros(100005, dtype=float)
             movies_dict[movie]["Mean"] = 0.0
+            movies_dict[movie]["Denominator"] = 0.0
             continue
         mean = np.mean(movies_dict[movie]["Ratings"])
         movies_dict[movie]["Ratings"] -= mean
         movies_dict[movie]["Mean"] = mean
+        movies_dict[movie]["Denominator"] = math.sqrt(np.power(movies_dict[movie]['Ratings'], 2).sum())
 
     sim_dict = compute_similarities(movies_dict)
 
