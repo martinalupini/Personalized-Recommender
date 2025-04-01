@@ -53,7 +53,7 @@ def top_N_recommendations_IICF(user, user_dict, movies_dict, sim_dict, N=10):
 
     sorted_dict = dict(sorted(recommendations.items(), key=lambda item: item[1], reverse=True))
 
-    # Returning only the first k elements
+    # Returning only the first N elements
     top_N = dict(islice(sorted_dict.items(), N))
 
     return top_N
