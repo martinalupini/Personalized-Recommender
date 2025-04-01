@@ -6,7 +6,6 @@ from itertools import islice
 
 def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
     similarities = {}
-    print("top_k_similar_items")
     for movie in user_dict[user]["Movies_rated"].keys():
         # Skipping if is the same movie as item
         if movie == item:
@@ -26,7 +25,6 @@ def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
 
 
 def predict_score_IICF(user, item, user_dict, sim_dict):
-    print("predict_score_IICF")
     neighbours = top_k_similar_items(user, item, user_dict, sim_dict)
 
     if len(neighbours) == 0:
@@ -37,7 +35,7 @@ def predict_score_IICF(user, item, user_dict, sim_dict):
     for elem in neighbours:
         sim = sim_dict[(elem, item)]
         numerator += sim * user_dict[user]["Movies_rated"][elem]["Rating"]
-        denominator += math.abs(sim)
+        denominator += abs(sim)
 
     return float(numerator / denominator)
 

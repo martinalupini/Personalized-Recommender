@@ -2,69 +2,38 @@ __author__ = 'Martina Lupini'
 
 import csv
 import numpy as np
-import numpy.ma as ma
 import math
+from itertools import combinations
+import time
 
-
-def retrieve_movies_IICF():
-    movies_dict = {}
-    print("retrieve_movies_IICF")
-    with open("dataset/movies.csv", "r", encoding='utf-8') as file:
-        # skips the first line
-        next(file)
-        csvFile = csv.reader(file)
-        for line in csvFile:
-            if len(line) == 3:
-                movie_id, title, genres = line
-                genres = genres.split('|')
-
-                # Saving movie info
-                movies_dict[movie_id] = {"Title": title, "Genres_list": genres}
-
-    # Mapping between genres and indexes
-    movies_to_idx = {ch: idx for idx, ch in enumerate(movies_dict)}
-
-    return movies_dict, movies_to_idx
 
 
 def compute_similarities(movies_dict):
-
     sim_dict = {}
     print("compute_similarities")
-    for movie in movies_dict:
-        print(movie)
-        for movie_2 in movies_dict:
+    start_time = time.time()
+    # Generating only unique pairs of movies since the relationship is symmetric
+    movie_pairs = combinations(movies_dict.keys(), 2)
 
-            # No need to compute similarity for the same user
-            if movie == movie_2:
-                continue
+    for movie, movie_2 in movie_pairs:
 
-            # The similarity is simmetric so no need to compute it again
-            if (movie_2, movie) in sim_dict.keys():
-                sim_dict[(movie, movie_2)] = sim_dict[(movie_2, movie)]
-                continue
+        users_in_common = movies_dict[movie]["Users_who_rated"] & movies_dict[movie_2]["Users_who_rated"]
 
-            users_in_common = np.logical_and(movies_dict[movie]['OHE_ratings'], movies_dict[movie_2]['OHE_ratings'])
+        if len(users_in_common) <= 1:
+            sim = 0.0
+        else:
 
-            num_movies_in_common = np.count_nonzero(users_in_common)
-
-            if num_movies_in_common <= 1:
-                sim_dict[(movie, movie_2)] = 0.0
-                continue
-
-            # Selecting only the ratings of the movies in common
-            masked_vectors_1 = ma.masked_array(movies_dict[movie]['Ratings'], users_in_common)
-            masked_vectors_2 = ma.masked_array(movies_dict[movie_2]['Ratings'], users_in_common)
+            numerator = 0.0
+            for user in users_in_common:
+                numerator += movies_dict[movie]["Ratings"][user-1] * movies_dict[movie_2]["Ratings"][user-1]
 
             denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
-            if denominator == 0:
-                sim = 0.0
-            else:
-                numerator = np.dot(masked_vectors_1, masked_vectors_2.T)
-                sim = float(numerator / denominator)
+            sim = float(numerator / denominator) if denominator != 0 else 0.0
 
-            sim_dict[(movie, movie_2)] = sim
+        sim_dict[(movie, movie_2)] = sim
+        sim_dict[(movie_2, movie)] = sim
 
+    print("--- %s seconds ---" % (time.time() - start_time))
     return sim_dict
 
 
@@ -84,10 +53,11 @@ def retrieve_ratings_IICF(movies_dict):
 
                 if "Ratings" not in movies_dict[movie_id]:
                     movies_dict[movie_id]["Ratings"] = np.zeros(100005, dtype=float)
-                    movies_dict[movie_id]["OHE_ratings"] = np.zeros(100005, dtype=float)
+                if "Users_who_rated" not in movies_dict[movie_id]:
+                    movies_dict[movie_id]["Users_who_rated"] = set()
 
-                movies_dict[movie_id]["OHE_ratings"][int(user_id)-1] = 1
                 movies_dict[movie_id]["Ratings"][int(user_id)-1] = float(rating)
+                movies_dict[movie_id]["Users_who_rated"].add(int(user_id))
 
                 if user_id not in user_dict:
                     user_dict[user_id] = {}
@@ -95,10 +65,11 @@ def retrieve_ratings_IICF(movies_dict):
                 user_dict[user_id]["Movies_rated"][movie_id] = {"Rating": float(rating), "Timestamp": timestamp}
 
     for movie in movies_dict:
+        if "Users_who_rated" not in movies_dict[movie]:
+            movies_dict[movie]["Users_who_rated"] = set()
         # Handling the case the movie has no ratings
         if "Ratings" not in movies_dict[movie]:
             movies_dict[movie]["Ratings"] = np.zeros(100005, dtype=float)
-            movies_dict[movie]["OHE_ratings"] = np.zeros(100005, dtype=float)
             movies_dict[movie]["Mean"] = 0.0
             movies_dict[movie]["Denominator"] = 0.0
             continue

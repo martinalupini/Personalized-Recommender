@@ -14,7 +14,7 @@ def main():
 
     rec = top_N_recommendations("1", user_dict, movies_dict, movies_to_idx)
     """
-    movies_dict, movies_to_idx = retrieve_movies_IICF()
+    movies_dict, _ = retrieve_movies()
     user_dict, sim_dict = retrieve_ratings_IICF(movies_dict)
     top_N = top_N_recommendations_IICF("1", user_dict, movies_dict, sim_dict)
 
