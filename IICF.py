@@ -12,6 +12,8 @@ def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
             continue
 
         sim = sim_dict[(item, movie)]
+
+        # Considering only positive similarities
         if sim > 0:
             similarities[movie] = sim
 
@@ -21,11 +23,11 @@ def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
     # Returning only the first k elements
     neighbours = dict(islice(sorted_dict.items(), k))
 
-    return neighbours
+    return neighbours, similarities
 
 
 def predict_score_IICF(user, item, user_dict, sim_dict):
-    neighbours = top_k_similar_items(user, item, user_dict, sim_dict)
+    neighbours, _ = top_k_similar_items(user, item, user_dict, sim_dict)
 
     if len(neighbours) == 0:
         return 0.0

@@ -30,6 +30,7 @@ def retrieve_movies():
 
 def compute_similarities(movies_dict):
     sim_dict = {}
+    pos_sim = 0
     print("compute_similarities")
     start_time = time.time()
 
@@ -51,12 +52,15 @@ def compute_similarities(movies_dict):
             denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
             sim = float(numerator / denominator) if denominator != 0 else 0.0
 
+        if sim > 0:
+            pos_sim += 1
+
         sim_dict[(movie, movie_2)] = sim
         sim_dict[(movie_2, movie)] = sim
 
     print("--- %s seconds ---" % (time.time() - start_time))
 
-    return sim_dict
+    return sim_dict, pos_sim
 
 
 def create_ratings_vector(user_dict, movies_to_idx):

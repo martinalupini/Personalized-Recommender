@@ -2,28 +2,94 @@ __author__ = 'Martina Lupini'
 
 
 from Retriever import *
-from UUCF import *
-from IICF import *
 from Basket import *
+from Utils import *
 
 
 def main():
 
-    """
-    movies_dict, movies_to_idx = retrieve_movies()
-    user_dict = retrieve_ratings(movies_to_idx)
-
-    rec = top_N_recommendations("1", user_dict, movies_dict, movies_to_idx)
-    """
     movies_dict, movies_to_idx = retrieve_movies()
     user_dict = retrieve_ratings_IICF(movies_dict, movies_to_idx)
-    sim_dict = compute_similarities(movies_dict)
-    #top_N = top_N_recommendations_IICF("1", user_dict, movies_dict, sim_dict)
+    sim_dict, pos_sim = compute_similarities(movies_dict)
 
-    top_N = top_N_recommendations_basket(["1", "100", "1003"], movies_dict, sim_dict)
+    f = open("files/analysis.txt", "w")
+    f.write("UUCF#####################################################################################################\n")
+    without_sig, with_sig = pearson_correlation("1", "4", user_dict)
+    f.write("1) Pearson correlation between user 1 and 4 (without significance weighting): " + str(without_sig))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("2) Pearson correlation between user 1 and 4 (with isgnificance weighting): " + str(with_sig))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("4) Ratio between the two correlations: " + str(without_sig/with_sig))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    top_k_neigh, all_neigh = top_k_neighbours("1", "10", user_dict, k=20)
+    f.write("5) Number of neighbours for user 1 with item 10: " + str(len(all_neigh)))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("6) Top k neighbours for user 1 with item 10:\n")
+    write_top_k_neighbours(top_k_neigh, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    score, avg_dev = predict_rating("1", "10", user_dict, movies_to_idx)
+    f.write("7) Weighted average of the deviation from the mean rating for user 1 with item 10: " + str(avg_dev))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("8) Rating prediction of item 10 for user 1: " + str(score))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("9) Title of movie 10: " + movies_dict["10"]["Title"])
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    top_k_neigh, all_neigh = top_k_neighbours("1", "260", user_dict, k=20)
+    f.write("10) Number of neighbours for user 1 with item 260: " + str(len(all_neigh)))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("11) Top k neighbours for user 1 with item 260:\n")
+    write_top_k_neighbours(top_k_neigh, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    score, avg_dev = predict_rating("1", "260", user_dict, movies_to_idx)
+    f.write("12) Weighted average of the deviation from the mean rating for user 1 with item 260: " + str(avg_dev))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("13) Rating prediction of item 260 for user 1: " + str(score))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("14) Title of movie 260: " + movies_dict["260"]["Title"])
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("16) Top N recommendations for user 1:\n")
+    top_N = top_N_recommendations_UUCF("1", user_dict, movies_dict, movies_to_idx)
+    print_recommendations(top_N, movies_dict, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("17) Top N recommendations for user 522:\n")
+    top_N = top_N_recommendations_UUCF("522", user_dict, movies_dict, movies_to_idx)
+    print_recommendations(top_N, movies_dict, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
 
+    f.write("\nIICF#####################################################################################################\n")
+    f.write("19) Number of positive similarities: " + str(pos_sim))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("20) Cosine similarity between users 594 and 596: " + str(sim_dict[("594","596")]))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    top_k_neigh, all_neigh = top_k_similar_items("522", "25", user_dict, sim_dict)
+    f.write("21) Number of similar items to item 25 and user 522 (strictly positive): " + str(len(all_neigh)))
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("22) Top k most similar items for item 25 user 522:\n")
+    write_top_k_most_similar(top_k_neigh, movies_dict, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("24) Top N recommendations for user 522:\n")
+    top_N = top_N_recommendations_IICF("522", user_dict, movies_dict, sim_dict)
+    print_recommendations(top_N, movies_dict, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
 
+    f.write("\nBasket#####################################################################################################\n")
+    f.write("25) Top N recommendations for basket with item 1:\n")
+    top_N = top_N_recommendations_basket("1", movies_dict, sim_dict)
+    print_recommendations(top_N, movies_dict, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("26) Top N recommendations for basket with items 1, 48, 239 (only positive similarities):\n")
+    top_N = top_N_recommendations_basket(["1", "48", "239"], movies_dict, sim_dict)
+    print_recommendations(top_N, movies_dict, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
+    f.write("27) Top N recommendations for basket with items 1, 48, 239 (all similarities):\n")
+    top_N = top_N_recommendations_basket(["1", "48", "239"], movies_dict, sim_dict, only_positive=False)
+    print_recommendations(top_N, movies_dict, f)
+    f.write("\n---------------------------------------------------------------------------------------------------------\n")
 
+    f.write("\nHybrid#####################################################################################################\n")
+    f.write("29) Top N recommendations hybrid for user 522:\n")
+    top_N = top_N_recommendations_hybrid("522", user_dict, movies_dict, sim_dict, movies_to_idx)
+    print_recommendations(top_N, movies_dict, f)
 
 
 if __name__ == "__main__":

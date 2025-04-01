@@ -37,7 +37,8 @@ def top_N_recommendations_hybrid(user, user_dict, movies_dict, sim_dict, movies_
         if movie in user_dict[user]["Movies_rated"]:
             continue
 
-        recommendations[movie] = weight_IICF * predict_score_IICF(user, movie, user_dict, sim_dict) + weight_UUCF * predict_rating(user, movie, user_dict, movies_to_idx)
+        user_score, _ = predict_rating(user, movie, user_dict, movies_to_idx)
+        recommendations[movie] = weight_IICF * predict_score_IICF(user, movie, user_dict, sim_dict) + weight_UUCF * user_score
 
     sorted_dict = dict(sorted(recommendations.items(), key=lambda item: item[1], reverse=True))
 

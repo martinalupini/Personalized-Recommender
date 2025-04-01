@@ -40,7 +40,7 @@ def top_k_neighbours(main_user, item_of_interest, user_dict, k=20):
             continue
 
         _, sim = pearson_correlation(main_user, user, user_dict)
-        if sim >= 0:
+        if sim > 0:
             weights[user] = sim
 
     # Sorting the dictionary based on the similarity (descending order)
@@ -53,14 +53,14 @@ def top_k_neighbours(main_user, item_of_interest, user_dict, k=20):
     # Returning only the first N elements
     neighbours = dict(islice(sorted_dict.items(), k))
 
-    return neighbours
+    return neighbours, sorted_dict
 
 
 def predict_rating(main_user, item, user_dict, movies_to_idx):
     avg_rating = user_dict[main_user]['average_rating']
     denominator = 0.0
     numerator = 0.0
-    neighbors = top_k_neighbours(main_user, item, user_dict)
+    neighbors, _ = top_k_neighbours(main_user, item, user_dict)
 
     for user in neighbors:
         weight = neighbors[user]
@@ -68,12 +68,12 @@ def predict_rating(main_user, item, user_dict, movies_to_idx):
         numerator += weight * user_dict[user]['vector_ratings'][movies_to_idx[item]]
 
     if denominator == 0:
-        return 0.0
+        return 0.0, 0.0
 
-    return float(avg_rating + (numerator / denominator))
+    return float(avg_rating + (numerator / denominator)), numerator
 
 
-def top_N_recommendations(main_user, user_dict, movie_dict, movies_to_idx, N=10):
+def top_N_recommendations_UUCF(main_user, user_dict, movie_dict, movies_to_idx, N=10):
     score_dict = {}
 
     for movie in movie_dict:
@@ -82,7 +82,7 @@ def top_N_recommendations(main_user, user_dict, movie_dict, movies_to_idx, N=10)
         if movie in user_dict[main_user]['Movies_rated']:
             continue
 
-        score_dict[movie] = predict_rating(main_user, movie, user_dict, movies_to_idx)
+        score_dict[movie], _ = predict_rating(main_user, movie, user_dict, movies_to_idx)
 
     # Sorting the dictionary based on the similarity (descending order)
     sorted_dict = dict(sorted(score_dict.items(), key=lambda item: item[1], reverse=True))
