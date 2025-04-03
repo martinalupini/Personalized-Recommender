@@ -7,19 +7,21 @@ from itertools import islice
 
 
 def pearson_correlation(user_1, user_2, user_dict, cut_off_value=10):
-    movies_in_common = np.logical_and(user_dict[user_1]['OHE_ratings'], user_dict[user_2]['OHE_ratings'])
+    movies_in_common = np.logical_and(user_dict[user_1]['OHE_ratings'], user_dict[user_2]['OHE_ratings']).astype(int)
+
     num_movies_in_common = np.count_nonzero(movies_in_common)
 
     if num_movies_in_common <= 1:
         return 0.0, 0.0
 
     # Selecting only the ratings of the movies in common
-    masked_vectors_1 = ma.masked_array(user_dict[user_1]['vector_ratings'], movies_in_common)
-    masked_vectors_2 = ma.masked_array(user_dict[user_2]['vector_ratings'], movies_in_common)
+    masked_vectors_1 = user_dict[user_1]['vector_ratings'] * movies_in_common
+    masked_vectors_2 = user_dict[user_2]['vector_ratings'] * movies_in_common
 
     numerator = np.dot(masked_vectors_1, masked_vectors_2.T)
 
-    denominator = math.sqrt(np.power(masked_vectors_1, 2).sum()) * math.sqrt(np.power(masked_vectors_2, 2).sum())
+    denominator = np.linalg.norm(masked_vectors_1) * np.linalg.norm(masked_vectors_2)
+
     if denominator == 0:
         return 0.0, 0.0
 
@@ -70,7 +72,7 @@ def predict_rating(main_user, item, user_dict, movies_to_idx):
     if denominator == 0:
         return 0.0, 0.0
 
-    return float(avg_rating + (numerator / denominator)), numerator
+    return float(avg_rating + (numerator / denominator)), float((numerator / denominator))
 
 
 def top_N_recommendations_UUCF(main_user, user_dict, movie_dict, movies_to_idx, N=10):

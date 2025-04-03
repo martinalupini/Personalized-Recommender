@@ -1,333 +1,333 @@
 UUCF#####################################################################################################
-1) Pearson correlation between user 1 and 4 (without significance weighting): 0.0897758232415471
+1) Pearson correlation between user 1 and 4 (without significance weighting): 0.04213680837591086
 ---------------------------------------------------------------------------------------------------------
-2) Pearson correlation between user 1 and 4 (with isgnificance weighting): 0.04488791162077355
+2) Pearson correlation between user 1 and 4 (with isgnificance weighting): 0.02106840418795543
 ---------------------------------------------------------------------------------------------------------
 4) Ratio between the two correlations: 2.0
 ---------------------------------------------------------------------------------------------------------
-5) Number of neighbours for user 1 with item 10: 51
+5) Number of neighbours for user 1 with item 10: 30
 ---------------------------------------------------------------------------------------------------------
 6) Top k neighbours for user 1 with item 10:
-id: 468, sim: 0.24710999747144208
-id: 73, sim: 0.2064772747593285
-id: 130, sim: 0.1753007899479736
-id: 564, sim: 0.16676818055941908
-id: 19, sim: 0.09794188652327869
-id: 461, sim: 0.09654998567754972
-id: 654, sim: 0.09628566155143896
-id: 15, sim: 0.09118987937926161
-id: 624, sim: 0.07416331200603517
-id: 311, sim: 0.07265849574136742
-id: 607, sim: 0.06065252366494675
-id: 214, sim: 0.056282861997730256
-id: 212, sim: 0.05416937481788156
-id: 105, sim: 0.0533494524827024
-id: 7, sim: 0.046783981098550254
-id: 4, sim: 0.04488791162077355
-id: 285, sim: 0.043225701348864144
-id: 405, sim: 0.04019868831457789
-id: 577, sim: 0.03541630532455096
-id: 294, sim: 0.03519040883374037
+id: 390, sim: 0.37976211745379407
+id: 312, sim: 0.34778700225454795
+id: 353, sim: 0.2865915778360536
+id: 428, sim: 0.2729107049454655
+id: 177, sim: 0.2630318859067765
+id: 561, sim: 0.25583582053934906
+id: 405, sim: 0.20239945901982542
+id: 458, sim: 0.19999815803167262
+id: 236, sim: 0.19012109129819604
+id: 247, sim: 0.18298057613606222
+id: 430, sim: 0.17698364447639653
+id: 243, sim: 0.1627484990010214
+id: 285, sim: 0.14863349494711475
+id: 574, sim: 0.14297980920771322
+id: 150, sim: 0.14281903684635436
+id: 608, sim: 0.14008707563881007
+id: 295, sim: 0.13295134132714795
+id: 641, sim: 0.12493900951088494
+id: 592, sim: 0.12403408673701902
+id: 384, sim: 0.12083680180003592
 
 ---------------------------------------------------------------------------------------------------------
-7) Weighted average of the deviation from the mean rating for user 1 with item 10: 5.148936134543511
+7) Weighted average of the deviation from the mean rating for user 1 with item 10: -0.30277403965828986
 ---------------------------------------------------------------------------------------------------------
-8) Rating prediction of item 10 for user 1: 2.874712224551197
+8) Rating prediction of item 10 for user 1: 2.24722596034171
 ---------------------------------------------------------------------------------------------------------
 9) Title of movie 10: GoldenEye (1995)
 ---------------------------------------------------------------------------------------------------------
-10) Number of neighbours for user 1 with item 260: 113
+10) Number of neighbours for user 1 with item 260: 63
 ---------------------------------------------------------------------------------------------------------
 11) Top k neighbours for user 1 with item 260:
-id: 468, sim: 0.24710999747144208
-id: 102, sim: 0.23082108566478363
-id: 73, sim: 0.2064772747593285
-id: 195, sim: 0.1974110875230613
-id: 119, sim: 0.18031100752051069
-id: 130, sim: 0.1753007899479736
-id: 564, sim: 0.16676818055941908
-id: 575, sim: 0.14129063008795054
-id: 232, sim: 0.1358323412800532
-id: 580, sim: 0.12748267198328714
-id: 509, sim: 0.12392862402782875
-id: 518, sim: 0.1208845454245037
-id: 472, sim: 0.12076592305148254
-id: 452, sim: 0.11672924215615678
-id: 19, sim: 0.09794188652327869
-id: 461, sim: 0.09654998567754972
-id: 654, sim: 0.09628566155143896
-id: 15, sim: 0.09118987937926161
-id: 30, sim: 0.08050342295623261
-id: 23, sim: 0.07665165244476851
+id: 580, sim: 0.6625472742003927
+id: 463, sim: 0.388763881018101
+id: 390, sim: 0.37976211745379407
+id: 585, sim: 0.35062100531729173
+id: 312, sim: 0.34778700225454795
+id: 353, sim: 0.2865915778360536
+id: 394, sim: 0.2816898480519987
+id: 466, sim: 0.28001045251295337
+id: 510, sim: 0.2767346746437224
+id: 428, sim: 0.2729107049454655
+id: 505, sim: 0.25694970235409637
+id: 561, sim: 0.25583582053934906
+id: 533, sim: 0.24855249867217546
+id: 242, sim: 0.24017846543583923
+id: 41, sim: 0.21798990586843445
+id: 22, sim: 0.21035896427251233
+id: 439, sim: 0.20804249079711565
+id: 405, sim: 0.20239945901982542
+id: 452, sim: 0.19218775874226246
+id: 236, sim: 0.19012109129819604
 
 ---------------------------------------------------------------------------------------------------------
-12) Weighted average of the deviation from the mean rating for user 1 with item 260: 11.497008717792278
+12) Weighted average of the deviation from the mean rating for user 1 with item 260: 0.505465889819296
 ---------------------------------------------------------------------------------------------------------
-13) Rating prediction of item 260 for user 1: 4.067797692485593
+13) Rating prediction of item 260 for user 1: 3.055465889819296
 ---------------------------------------------------------------------------------------------------------
 14) Title of movie 260: Star Wars: Episode IV - A New Hope (1977)
 ---------------------------------------------------------------------------------------------------------
 16) Top N recommendations for user 1:
-1) ID: 27664 Title: Brown Bunny, The (2003)
-Rating prediction: 4.978027397260274
+1) ID: 3216 Title: Vampyros Lesbos (Vampiras, Las) (1971)
+Rating prediction: 4.936834319526627
 **********************************
-2) ID: 4466 Title: Above the Law (1988)
-Rating prediction: 4.974794520547946
+2) ID: 40412 Title: Dead Man's Shoes (2004)
+Rating prediction: 4.936834319526627
 **********************************
-3) ID: 4945 Title: Enforcer, The (1976)
-Rating prediction: 4.974794520547946
+3) ID: 92494 Title: Dylan Moran: Monster (2004)
+Rating prediction: 4.936834319526627
 **********************************
-4) ID: 101962 Title: Wolf Children (Okami kodomo no ame to yuki) (2012)
-Rating prediction: 4.964876712328768
+4) ID: 3320 Title: Mifune's Last Song (Mifunes sidste sang) (1999)
+Rating prediction: 4.928235294117647
 **********************************
-5) ID: 8208 Title: Razor's Edge, The (1946)
-Rating prediction: 4.958630136986302
+5) ID: 4302 Title: King Is Alive, The (2000)
+Rating prediction: 4.928235294117647
 **********************************
-6) ID: 845 Title: Day the Sun Turned Cold, The (Tianguo niezi) (1994)
-Rating prediction: 4.94827397260274
+6) ID: 4731 Title: Innocence (2000)
+Rating prediction: 4.928235294117647
 **********************************
-7) ID: 4822 Title: Max Keeble's Big Move (2001)
-Rating prediction: 4.937589041095891
+7) ID: 5071 Title: Maelström (2000)
+Rating prediction: 4.928235294117647
 **********************************
-8) ID: 53 Title: Lamerica (1994)
-Rating prediction: 4.935123287671233
+8) ID: 86781 Title: Incendies (2010)
+Rating prediction: 4.928235294117647
 **********************************
-9) ID: 3746 Title: Butterfly (La lengua de las mariposas) (1999)
-Rating prediction: 4.928876712328767
+9) ID: 97957 Title: Excision (2012)
+Rating prediction: 4.717883488583054
 **********************************
-10) ID: 7459 Title: Carandiru (2003)
-Rating prediction: 4.928876712328767
+10) ID: 3414 Title: Love Is a Many-Splendored Thing (1955)
+Rating prediction: 4.543621197252207
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 17) Top N recommendations for user 522:
-1) ID: 109249 Title: Journey, The (El viaje) (1992)
-Rating prediction: 5.074575342465753
+1) ID: 565 Title: Cronos (1993)
+Rating prediction: 6.180285714285715
 **********************************
-2) ID: 162542 Title: Rustom (2016)
-Rating prediction: 5.072657534246575
+2) ID: 1450 Title: Prisoner of the Mountains (Kavkazsky plennik) (1996)
+Rating prediction: 6.180285714285715
 **********************************
-3) ID: 100553 Title: Frozen Planet (2011)
-Rating prediction: 5.070684931506849
+3) ID: 1563 Title: Dream With the Fishes (1997)
+Rating prediction: 6.180285714285715
 **********************************
-4) ID: 3879 Title: Art of War, The (2000)
-Rating prediction: 5.068328767123288
+4) ID: 1819 Title: Storefront Hitchcock (1997)
+Rating prediction: 6.180285714285715
 **********************************
-5) ID: 7773 Title: Bang, Bang, You're Dead (2002)
-Rating prediction: 5.0677808219178075
+5) ID: 4076 Title: Two Ninas (1999)
+Rating prediction: 6.180285714285715
 **********************************
-6) ID: 39416 Title: Kids in America (2005)
-Rating prediction: 5.0677808219178075
+6) ID: 4591 Title: Erik the Viking (1989)
+Rating prediction: 6.180285714285715
 **********************************
-7) ID: 2562 Title: Bandits (1997)
-Rating prediction: 5.063068493150685
+7) ID: 4796 Title: Grass Is Greener, The (1960)
+Rating prediction: 6.180285714285715
 **********************************
-8) ID: 2636 Title: Mummy's Ghost, The (1944)
-Rating prediction: 5.061972602739726
+8) ID: 4930 Title: Funeral in Berlin (1966)
+Rating prediction: 6.180285714285715
 **********************************
-9) ID: 2647 Title: House of Frankenstein (1944)
-Rating prediction: 5.061972602739726
+9) ID: 5427 Title: Caveman (1981)
+Rating prediction: 6.180285714285715
 **********************************
-10) ID: 2649 Title: Son of Frankenstein (1939)
-Rating prediction: 5.061972602739726
+10) ID: 3216 Title: Vampyros Lesbos (Vampiras, Las) (1971)
+Rating prediction: 5.552834319526627
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 
 IICF#####################################################################################################
-19) Number of positive similarities: 3887562
+19) Number of positive similarities: 2335757
 ---------------------------------------------------------------------------------------------------------
-20) Cosine similarity between users 594 and 596: 0.6610204185325331
+20) Cosine similarity between users 594 and 596: 0.020304700619709525
 ---------------------------------------------------------------------------------------------------------
-21) Number of similar items to item 25 and user 522 (strictly positive): 207
+21) Number of similar items to item 25 and user 522 (strictly positive): 150
 ---------------------------------------------------------------------------------------------------------
 22) Top k most similar items for item 25 user 522:
-id: 32, title: Twelve Monkeys (a.k.a. 12 Monkeys) (1995), sim: 0.47499302749246375
-id: 50, title: Usual Suspects, The (1995), sim: 0.41304900002545425
-id: 733, title: Rock, The (1996), sim: 0.3906038905354165
-id: 47, title: Seven (a.k.a. Se7en) (1995), sim: 0.38821478329589026
-id: 296, title: Pulp Fiction (1994), sim: 0.37854454434471113
-id: 778, title: Trainspotting (1996), sim: 0.36459677408475
-id: 858, title: Godfather, The (1972), sim: 0.3622389605870884
-id: 508, title: Philadelphia (1993), sim: 0.3599418011656437
-id: 1225, title: Amadeus (1984), sim: 0.3522120897652833
-id: 1208, title: Apocalypse Now (1979), sim: 0.345373073179313
-id: 2194, title: Untouchables, The (1987), sim: 0.33444464078389774
-id: 527, title: Schindler's List (1993), sim: 0.3311703424830022
-id: 1213, title: Goodfellas (1990), sim: 0.330855596245947
-id: 1393, title: Jerry Maguire (1996), sim: 0.32973636026789727
-id: 1466, title: Donnie Brasco (1997), sim: 0.31218079302697943
-id: 2396, title: Shakespeare in Love (1998), sim: 0.3091143049613258
-id: 1089, title: Reservoir Dogs (1992), sim: 0.3057827508498681
-id: 1222, title: Full Metal Jacket (1987), sim: 0.3050046961711612
-id: 1036, title: Die Hard (1988), sim: 0.30066707474468773
-id: 110, title: Braveheart (1995), sim: 0.29565500161645153
+id: 193, title: Showgirls (1995), sim: 0.011516999257228332
+id: 4239, title: Blow (2001), sim: 0.011416425254527676
+id: 485, title: Last Action Hero (1993), sim: 0.00989746782069151
+id: 1092, title: Basic Instinct (1992), sim: 0.009744854109834715
+id: 1391, title: Mars Attacks! (1996), sim: 0.008290987775671778
+id: 2710, title: Blair Witch Project, The (1999), sim: 0.008194202494365845
+id: 79695, title: Expendables, The (2010), sim: 0.007676647859022718
+id: 778, title: Trainspotting (1996), sim: 0.00748506668973321
+id: 165, title: Die Hard: With a Vengeance (1995), sim: 0.007255408324515533
+id: 173, title: Judge Dredd (1995), sim: 0.007251541241454437
+id: 6947, title: Master and Commander: The Far Side of the World (2003), sim: 0.0064836254422602916
+id: 44191, title: V for Vendetta (2006), sim: 0.006410606753160842
+id: 4019, title: Finding Forrester (2000), sim: 0.006374094164373732
+id: 4343, title: Evolution (2001), sim: 0.006338556578123389
+id: 106916, title: American Hustle (2013), sim: 0.006313823821312763
+id: 81845, title: King's Speech, The (2010), sim: 0.006126401643125287
+id: 64839, title: Wrestler, The (2008), sim: 0.0061083351327053965
+id: 122, title: Boomerang (1992), sim: 0.006002465674797463
+id: 55247, title: Into the Wild (2007), sim: 0.005977113722528295
+id: 231, title: Dumb & Dumber (Dumb and Dumber) (1994), sim: 0.005842562196100158
 
 ---------------------------------------------------------------------------------------------------------
 24) Top N recommendations for user 522:
-1) ID: 3822 Title: Girl on the Bridge, The (Fille sur le pont, La) (1999)
+1) ID: 565 Title: Cronos (1993)
 Rating prediction: 4.5
 **********************************
 2) ID: 3078 Title: Liberty Heights (1999)
-Rating prediction: 4.499999999999999
+Rating prediction: 4.5
 **********************************
-3) ID: 3892 Title: Anatomy (Anatomie) (2000)
-Rating prediction: 4.3930017341042955
+3) ID: 3540 Title: Passion of Mind (2000)
+Rating prediction: 4.5
 **********************************
-4) ID: 25971 Title: Carrie (1952)
-Rating prediction: 4.338591733875632
+4) ID: 6266 Title: What a Girl Wants (2003)
+Rating prediction: 4.5
 **********************************
 5) ID: 26294 Title: My Name Is Nobody (Il Mio nome è Nessuno) (1973)
-Rating prediction: 4.328063169023631
+Rating prediction: 4.5
 **********************************
-6) ID: 5202 Title: Mon oncle d'Amérique (1980)
-Rating prediction: 4.321615590191626
+6) ID: 42732 Title: Last Holiday (2006)
+Rating prediction: 4.5
 **********************************
-7) ID: 120637 Title: Blackhat (2015)
-Rating prediction: 4.319505083490093
+7) ID: 106441 Title: Book Thief, The (2013)
+Rating prediction: 4.5
 **********************************
-8) ID: 4837 Title: Cruising (1980)
-Rating prediction: 4.31387181948974
+8) ID: 120637 Title: Blackhat (2015)
+Rating prediction: 4.5
 **********************************
-9) ID: 5241 Title: Seems Like Old Times (1980)
-Rating prediction: 4.312166886275545
+9) ID: 5667 Title: Tuck Everlasting (2002)
+Rating prediction: 4.433330260374265
 **********************************
-10) ID: 5410 Title: Silent Running (1972)
-Rating prediction: 4.312166886275545
+10) ID: 3171 Title: Room at the Top (1959)
+Rating prediction: 4.429541558970028
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 
 Basket#####################################################################################################
 25) Top N recommendations for basket with item 1:
-1) ID: 3114 Title: Toy Story 2 (1999)
-Rating prediction: 0.5936949323869477
+1) ID: 114662 Title: American Sniper (2014)
+Rating prediction: 0.024014525147255602
 **********************************
-2) ID: 260 Title: Star Wars: Episode IV - A New Hope (1977)
-Rating prediction: 0.5745757596880069
+2) ID: 3114 Title: Toy Story 2 (1999)
+Rating prediction: 0.02229655850458919
 **********************************
-3) ID: 356 Title: Forrest Gump (1994)
-Rating prediction: 0.5627735047107618
+3) ID: 130490 Title: Insurgent (2015)
+Rating prediction: 0.018935513473333478
 **********************************
-4) ID: 780 Title: Independence Day (a.k.a. ID4) (1996)
-Rating prediction: 0.5615583628452377
+4) ID: 135436 Title: The Secret Life of Pets (2016)
+Rating prediction: 0.018769577127272778
 **********************************
-5) ID: 1265 Title: Groundhog Day (1993)
-Rating prediction: 0.546896235679361
+5) ID: 128520 Title: The Wedding Ringer (2015)
+Rating prediction: 0.017654603006441585
 **********************************
-6) ID: 1270 Title: Back to the Future (1985)
-Rating prediction: 0.5353759651344085
+6) ID: 160563 Title: The Legend of Tarzan (2016)
+Rating prediction: 0.01740916594020886
 **********************************
-7) ID: 480 Title: Jurassic Park (1993)
-Rating prediction: 0.5337612458996082
+7) ID: 98122 Title: Indie Game: The Movie (2012)
+Rating prediction: 0.017311762545111443
 **********************************
-8) ID: 4306 Title: Shrek (2001)
-Rating prediction: 0.5315461596420276
+8) ID: 2355 Title: Bug's Life, A (1998)
+Rating prediction: 0.017259223783879292
 **********************************
-9) ID: 1210 Title: Star Wars: Episode VI - Return of the Jedi (1983)
-Rating prediction: 0.5280852871273413
+9) ID: 107348 Title: Anchorman 2: The Legend Continues (2013)
+Rating prediction: 0.01712167378046042
 **********************************
-10) ID: 296 Title: Pulp Fiction (1994)
-Rating prediction: 0.5253282443032367
+10) ID: 2365 Title: King Kong vs. Godzilla (Kingukongu tai Gojira) (1962)
+Rating prediction: 0.016417264013338165
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 26) Top N recommendations for basket with items 1, 48, 239 (only positive similarities):
-1) ID: 595 Title: Beauty and the Beast (1991)
-Rating prediction: 1.2358187559576033
+1) ID: 3810 Title: White Sands (1992)
+Rating prediction: 0.09039348394714576
 **********************************
-2) ID: 364 Title: Lion King, The (1994)
-Rating prediction: 1.2235564794202705
+2) ID: 3807 Title: Sinbad and the Eye of the Tiger (1977)
+Rating prediction: 0.08432677704564899
 **********************************
-3) ID: 588 Title: Aladdin (1992)
-Rating prediction: 1.2020727143482763
+3) ID: 2574 Title: Out-of-Towners, The (1999)
+Rating prediction: 0.07645434720682381
 **********************************
-4) ID: 1566 Title: Hercules (1997)
-Rating prediction: 1.1610146116761917
+4) ID: 3573 Title: Carnosaur 2 (1995)
+Rating prediction: 0.07077389733389186
 **********************************
-5) ID: 1022 Title: Cinderella (1950)
-Rating prediction: 1.1063705532008745
+5) ID: 2531 Title: Battle for the Planet of the Apes (1973)
+Rating prediction: 0.07041455822222094
 **********************************
-6) ID: 783 Title: Hunchback of Notre Dame, The (1996)
-Rating prediction: 1.096653061566516
+6) ID: 3841 Title: Air America (1990)
+Rating prediction: 0.06942845337469536
 **********************************
-7) ID: 2081 Title: Little Mermaid, The (1989)
-Rating prediction: 1.0899112474089176
+7) ID: 3771 Title: The Golden Voyage of Sinbad (1973)
+Rating prediction: 0.06748638931609438
 **********************************
-8) ID: 1028 Title: Mary Poppins (1964)
-Rating prediction: 1.0759669859912286
+8) ID: 2668 Title: Swamp Thing (1982)
+Rating prediction: 0.06434372406226924
 **********************************
-9) ID: 2355 Title: Bug's Life, A (1998)
-Rating prediction: 1.07562578092215
+9) ID: 2548 Title: Rage: Carrie 2, The (1999)
+Rating prediction: 0.06397582965254339
 **********************************
-10) ID: 596 Title: Pinocchio (1940)
-Rating prediction: 1.0722673086979737
+10) ID: 2772 Title: Detroit Rock City (1999)
+Rating prediction: 0.06270146672090106
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 27) Top N recommendations for basket with items 1, 48, 239 (all similarities):
-1) ID: 595 Title: Beauty and the Beast (1991)
-Rating prediction: 1.2358187559576033
+1) ID: 3810 Title: White Sands (1992)
+Rating prediction: 0.09039348394714576
 **********************************
-2) ID: 364 Title: Lion King, The (1994)
-Rating prediction: 1.2235564794202705
+2) ID: 2574 Title: Out-of-Towners, The (1999)
+Rating prediction: 0.07131668809356093
 **********************************
-3) ID: 588 Title: Aladdin (1992)
-Rating prediction: 1.2020727143482763
+3) ID: 2531 Title: Battle for the Planet of the Apes (1973)
+Rating prediction: 0.07041455822222094
 **********************************
-4) ID: 1566 Title: Hercules (1997)
-Rating prediction: 1.1610146116761917
+4) ID: 3807 Title: Sinbad and the Eye of the Tiger (1977)
+Rating prediction: 0.06497891979140673
 **********************************
-5) ID: 1022 Title: Cinderella (1950)
-Rating prediction: 1.1063705532008745
+5) ID: 2772 Title: Detroit Rock City (1999)
+Rating prediction: 0.06270146672090106
 **********************************
-6) ID: 783 Title: Hunchback of Notre Dame, The (1996)
-Rating prediction: 1.096653061566516
+6) ID: 3771 Title: The Golden Voyage of Sinbad (1973)
+Rating prediction: 0.05818208972433551
 **********************************
-7) ID: 2081 Title: Little Mermaid, The (1989)
-Rating prediction: 1.0899112474089176
+7) ID: 2530 Title: Beneath the Planet of the Apes (1970)
+Rating prediction: 0.05424542937625643
 **********************************
-8) ID: 1028 Title: Mary Poppins (1964)
-Rating prediction: 1.0759669859912286
+8) ID: 2532 Title: Conquest of the Planet of the Apes (1972)
+Rating prediction: 0.05409862797039389
 **********************************
-9) ID: 2355 Title: Bug's Life, A (1998)
-Rating prediction: 1.07562578092215
+9) ID: 2888 Title: Drive Me Crazy (1999)
+Rating prediction: 0.05389712041083385
 **********************************
-10) ID: 596 Title: Pinocchio (1940)
-Rating prediction: 1.0722673086979737
+10) ID: 45672 Title: Click (2006)
+Rating prediction: 0.052822802013119965
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 
 Hybrid#####################################################################################################
 29) Top N recommendations hybrid for user 522:
-1) ID: 5179 Title: Gloria (1980)
-Rating prediction: 4.554219266128134
+1) ID: 565 Title: Cronos (1993)
+Rating prediction: 5.340142857142857
 **********************************
-2) ID: 2673 Title: Eternity and a Day (Mia aoniotita kai mia mera) (1998)
-Rating prediction: 4.416743229837234
+2) ID: 40412 Title: Dead Man's Shoes (2004)
+Rating prediction: 4.328288894086406
 **********************************
-3) ID: 5498 Title: Red Beard (Akahige) (1965)
-Rating prediction: 4.4016100337434185
+3) ID: 2283 Title: Sheltering Sky, The (1990)
+Rating prediction: 4.2353523316153385
 **********************************
-4) ID: 984 Title: Pompatus of Love, The (1996)
-Rating prediction: 4.38552720604723
+4) ID: 3171 Title: Room at the Top (1959)
+Rating prediction: 4.220100876572393
 **********************************
-5) ID: 309 Title: Red Firecracker, Green Firecracker (Pao Da Shuang Deng) (1994)
-Rating prediction: 4.329253101953178
+5) ID: 131724 Title: The Jinx: The Life and Deaths of Robert Durst (2015)
+Rating prediction: 4.207904097167469
 **********************************
-6) ID: 4338 Title: Twelve O'Clock High (1949)
-Rating prediction: 4.322512728250104
+6) ID: 2304 Title: Love Is the Devil (1998)
+Rating prediction: 4.191813191311482
 **********************************
-7) ID: 4696 Title: Zorro, the Gay Blade (1981)
-Rating prediction: 4.30686112713135
+7) ID: 2938 Title: Man Facing Southeast (1986)
+Rating prediction: 4.177718077934262
 **********************************
-8) ID: 8199 Title: Ugetsu (Ugetsu monogatari) (1953)
-Rating prediction: 4.274094092522736
+8) ID: 44587 Title: Nanook of the North (1922)
+Rating prediction: 4.156541064718053
 **********************************
-9) ID: 6122 Title: Richard Pryor Live on the Sunset Strip (1982)
-Rating prediction: 4.270891639276135
+9) ID: 50641 Title: House (Hausu) (1977)
+Rating prediction: 4.142831743328967
 **********************************
-10) ID: 26318 Title: Phantom of Liberty, The (Fantôme de la liberté, Le) (1974)
-Rating prediction: 4.267809323773957
+10) ID: 5490 Title: The Big Bus (1976)
+Rating prediction: 4.126917163894996
 **********************************

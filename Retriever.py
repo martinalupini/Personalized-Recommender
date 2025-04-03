@@ -22,7 +22,7 @@ def retrieve_movies():
                 # Saving movie info
                 movies_dict[movie_id] = {"Title": title, "Genres_list": genres}
 
-    # Mapping between genres and indexes
+    # Mapping between movies and indexes
     movies_to_idx = {ch: idx for idx, ch in enumerate(movies_dict)}
 
     return movies_dict, movies_to_idx
@@ -47,13 +47,21 @@ def compute_similarities(movies_dict):
         else:
             numerator = 0.0
             for user in users_in_common:
-                numerator += movies_dict[movie]["Ratings"][user-1] * movies_dict[movie_2]["Ratings"][user-1]
+                numerator += movies_dict[movie]["Ratings"][user] * movies_dict[movie_2]["Ratings"][user]
 
             denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
             sim = float(numerator / denominator) if denominator != 0 else 0.0
 
         if sim > 0:
             pos_sim += 1
+
+        """
+        if movie == "494" and movie_2 == "496":
+            print(numerator)
+            print(movies_dict[movie]["Denominator"])
+            print(movies_dict[movie_2]["Denominator"])
+            exit()
+        """
 
         sim_dict[(movie, movie_2)] = sim
         sim_dict[(movie_2, movie)] = sim
@@ -75,7 +83,7 @@ def create_ratings_vector(user_dict, movies_to_idx):
 
         # Creating a mask to subtract only elements different from 0
         mask = user_dict[user]["vector_ratings"] != 0
-        avg_rating = avg_rating / len(movies_to_idx)
+        avg_rating = avg_rating / len(user_dict[user]["Movies_rated"])
         user_dict[user]["vector_ratings"][mask] -= avg_rating
         user_dict[user]["average_rating"] = avg_rating
 
@@ -95,12 +103,14 @@ def retrieve_ratings_IICF(movies_dict, movies_to_idx):
                 user_id, movie_id, rating, timestamp = line
 
                 if "Ratings" not in movies_dict[movie_id]:
-                    movies_dict[movie_id]["Ratings"] = np.zeros(100005, dtype=float)
-                if "Users_who_rated" not in movies_dict[movie_id]:
+                    movies_dict[movie_id]["Ratings"] = {}
                     movies_dict[movie_id]["Users_who_rated"] = set()
+                    movies_dict[movie_id]["rating_vect"] = []
 
-                movies_dict[movie_id]["Ratings"][int(user_id)-1] = float(rating)
-                movies_dict[movie_id]["Users_who_rated"].add(int(user_id))
+
+                movies_dict[movie_id]["Ratings"][user_id] = float(rating)
+                movies_dict[movie_id]["Users_who_rated"].add(user_id)
+                movies_dict[movie_id]["rating_vect"].append(float(rating))
 
                 if user_id not in user_dict:
                     user_dict[user_id] = {}
@@ -110,18 +120,21 @@ def retrieve_ratings_IICF(movies_dict, movies_to_idx):
             user_dict[user_id]["Movies_rated"][movie_id] = {"Rating": float(rating), "Timestamp": timestamp}
 
     for movie in movies_dict:
-        if "Users_who_rated" not in movies_dict[movie]:
-            movies_dict[movie]["Users_who_rated"] = set()
-        # Handling the case the movie has no ratings
         if "Ratings" not in movies_dict[movie]:
-            movies_dict[movie]["Ratings"] = np.zeros(100005, dtype=float)
+            movies_dict[movie]["Users_who_rated"] = set()
+            movies_dict[movie_id]["rating_vect"] = []
+            movies_dict[movie]["Ratings"] = {}
             movies_dict[movie]["Mean"] = 0.0
             movies_dict[movie]["Denominator"] = 0.0
             continue
-        mean = np.mean(movies_dict[movie]["Ratings"])
-        movies_dict[movie]["Ratings"] -= mean
+        if len(movies_dict[movie]["rating_vect"]) == 0:
+            mean = 0.0
+        else:
+            mean = np.mean(movies_dict[movie]["rating_vect"])
+        for user in movies_dict[movie]["Users_who_rated"]:
+            movies_dict[movie]["Ratings"][user] -= mean
         movies_dict[movie]["Mean"] = mean
-        movies_dict[movie]["Denominator"] = math.sqrt(np.power(movies_dict[movie]['Ratings'], 2).sum())
+        movies_dict[movie]["Denominator"] = math.sqrt(np.power(movies_dict[movie]['rating_vect'], 2).sum())
 
     create_ratings_vector(user_dict, movies_to_idx)
 
