@@ -31,6 +31,7 @@ def retrieve_movies():
 def compute_similarities(movies_dict):
     sim_dict = {}
     pos_sim = 0
+    file = open("files/sim_pos.txt", "w")
     print("compute_similarities")
     start_time = time.time()
 
@@ -41,32 +42,26 @@ def compute_similarities(movies_dict):
 
         users_in_common = movies_dict[movie]["Users_who_rated"] & movies_dict[movie_2]["Users_who_rated"]
 
-        if len(users_in_common) <= 1:
+        if len(users_in_common) < 1:
             sim = 0.0
 
         else:
             numerator = 0.0
             for user in users_in_common:
-                numerator += movies_dict[movie]["Ratings"][user] * movies_dict[movie_2]["Ratings"][user]
+                numerator += (movies_dict[movie]["Ratings"][user] * movies_dict[movie_2]["Ratings"][user])
 
             denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
             sim = float(numerator / denominator) if denominator != 0 else 0.0
 
-        if sim > 0:
-            pos_sim += 1
-
-        """
-        if movie == "494" and movie_2 == "496":
-            print(numerator)
-            print(movies_dict[movie]["Denominator"])
-            print(movies_dict[movie_2]["Denominator"])
-            exit()
-        """
+            if sim > 0:
+                pos_sim += 1
+                file.write(movie + ":"+movie_2+":"+str(sim)+"\n")
 
         sim_dict[(movie, movie_2)] = sim
         sim_dict[(movie_2, movie)] = sim
 
     print("--- %s seconds ---" % (time.time() - start_time))
+    file.close
 
     return sim_dict, pos_sim
 
@@ -134,7 +129,7 @@ def retrieve_ratings_IICF(movies_dict, movies_to_idx):
         for user in movies_dict[movie]["Users_who_rated"]:
             movies_dict[movie]["Ratings"][user] -= mean
         movies_dict[movie]["Mean"] = mean
-        movies_dict[movie]["Denominator"] = math.sqrt(np.power(movies_dict[movie]['rating_vect'], 2).sum())
+        movies_dict[movie]["Denominator"] = np.linalg.norm([movies_dict[movie]["Ratings"][user] for user in movies_dict[movie]["Users_who_rated"]])
 
     create_ratings_vector(user_dict, movies_to_idx)
 

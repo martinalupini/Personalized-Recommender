@@ -1,11 +1,15 @@
 def write_top_k_neighbours(top_k_neigh, f):
+    i = 0
     for neighbours in top_k_neigh:
-        f.write("id: " + neighbours + ", sim: " + str(top_k_neigh[neighbours]) + '\n')
+        f.write(str(i) + ") id: " + neighbours + ", sim: " + str(top_k_neigh[neighbours]) + '\n')
+        i += 1
 
 
 def write_top_k_most_similar(top_k_neigh, movie_dict, f):
+    i = 0
     for item in top_k_neigh:
-        f.write("id: " + item + ", title: " + movie_dict[item]["Title"] + ", sim: " + str(top_k_neigh[item]) + '\n')
+        f.write(str(i) + ") id: " + item + ", title: " + movie_dict[item]["Title"] + ", sim: " + str(top_k_neigh[item]) + '\n')
+        i += 1
 
 
 def print_recommendations(rating_list, movie_dict, file):
