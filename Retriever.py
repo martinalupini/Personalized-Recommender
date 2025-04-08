@@ -31,7 +31,7 @@ def retrieve_movies():
 def compute_similarities(movies_dict):
     sim_dict = {}
     pos_sim = 0
-    file = open("files/sim_pos.txt", "w")
+    #file = open("files/sim_pos.txt", "w")
     print("compute_similarities")
     start_time = time.time()
 
@@ -53,24 +53,18 @@ def compute_similarities(movies_dict):
             denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
             sim = numerator / denominator if denominator != 0 else 0.0
 
+            if math.isclose(sim, 0, abs_tol=1e-10):
+                sim = 0.0
+
             if sim > 0:
                 pos_sim += 1
-                file.write(movie + ":"+movie_2+":"+str(sim)+"\n")
-
-            if movie == "3074" and movie_2 == "6565":
-                print("users in common " + str(users_in_common))
-                print("numerator " + str(numerator))
-                print("norm_1 " + str(movies_dict[movie]["Denominator"]))
-                print("norm_2 " + str(movies_dict[movie_2]["Denominator"]))
-                print("mean_1 " + str(movies_dict[movie]["Mean"]))
-                print("mean_2 " + str(movies_dict[movie_2]["Mean"]))
-                print("sim " + str(sim))
+                #file.write(movie + ":"+movie_2+":"+str(sim)+"\n")
 
         sim_dict[(movie, movie_2)] = sim
         sim_dict[(movie_2, movie)] = sim
 
     print("--- %s seconds ---" % (time.time() - start_time))
-    file.close
+    #file.close
 
     return sim_dict, pos_sim
 

@@ -135,59 +135,59 @@ Rating prediction: 5.552834319526627
 ---------------------------------------------------------------------------------------------------------
 
 IICF#####################################################################################################
-19) Number of positive similarities: 4393558
+19) Number of positive similarities: 4390396
 ---------------------------------------------------------------------------------------------------------
-20) Cosine similarity between users 594 and 596: 0.310432331868294
+20) Cosine similarity between users 594 and 596: 0.31043233186829383
 ---------------------------------------------------------------------------------------------------------
 21) Number of similar items to item 25 and user 522 (strictly positive): 160
 ---------------------------------------------------------------------------------------------------------
 22) Top k most similar items for item 25 user 522:
-0) id: 4239, title: Blow (2001), sim: 0.14678734979171315
-1) id: 44191, title: V for Vendetta (2006), sim: 0.13850455754010027
+0) id: 4239, title: Blow (2001), sim: 0.14678734979171318
+1) id: 44191, title: V for Vendetta (2006), sim: 0.1385045575401003
 2) id: 778, title: Trainspotting (1996), sim: 0.13802688111417463
-3) id: 1092, title: Basic Instinct (1992), sim: 0.13057305177194098
-4) id: 485, title: Last Action Hero (1993), sim: 0.12462113294565987
-5) id: 81845, title: King's Speech, The (2010), sim: 0.12143250948890243
+3) id: 1092, title: Basic Instinct (1992), sim: 0.13057305177194095
+4) id: 485, title: Last Action Hero (1993), sim: 0.12462113294565985
+5) id: 81845, title: King's Speech, The (2010), sim: 0.1214325094889024
 6) id: 165, title: Die Hard: With a Vengeance (1995), sim: 0.1145171673230604
-7) id: 122, title: Boomerang (1992), sim: 0.1048643986483659
+7) id: 122, title: Boomerang (1992), sim: 0.10486439864836593
 8) id: 4019, title: Finding Forrester (2000), sim: 0.09811495582633668
 9) id: 68157, title: Inglourious Basterds (2009), sim: 0.09799314504677244
-10) id: 64839, title: Wrestler, The (2008), sim: 0.09536885947503577
+10) id: 64839, title: Wrestler, The (2008), sim: 0.0953688594750358
 11) id: 6947, title: Master and Commander: The Far Side of the World (2003), sim: 0.09066515469223772
-12) id: 1391, title: Mars Attacks! (1996), sim: 0.0872668272196132
-13) id: 193, title: Showgirls (1995), sim: 0.08722732656443696
-14) id: 30707, title: Million Dollar Baby (2004), sim: 0.08592465393627911
-15) id: 2762, title: Sixth Sense, The (1999), sim: 0.08525999008350202
-16) id: 1732, title: Big Lebowski, The (1998), sim: 0.08273589612844048
+12) id: 1391, title: Mars Attacks! (1996), sim: 0.08726682721961318
+13) id: 193, title: Showgirls (1995), sim: 0.08722732656443695
+14) id: 30707, title: Million Dollar Baby (2004), sim: 0.08592465393627913
+15) id: 2762, title: Sixth Sense, The (1999), sim: 0.08525999008350199
+16) id: 1732, title: Big Lebowski, The (1998), sim: 0.08273589612844047
 17) id: 55247, title: Into the Wild (2007), sim: 0.07972196331141021
 18) id: 1213, title: Goodfellas (1990), sim: 0.07866045210081524
-19) id: 1466, title: Donnie Brasco (1997), sim: 0.07752398433670253
+19) id: 1466, title: Donnie Brasco (1997), sim: 0.07752398433670257
 
 ---------------------------------------------------------------------------------------------------------
 24) Top N recommendations for user 522:
 1) ID: 1232 Title: Stalker (1979)
-Rating prediction: 3.912455651258437
+Rating prediction: 3.912455651258438
 **********************************
 2) ID: 5690 Title: Grave of the Fireflies (Hotaru no haka) (1988)
-Rating prediction: 3.894039444048319
+Rating prediction: 3.894039444048318
 **********************************
 3) ID: 58998 Title: Forgetting Sarah Marshall (2008)
-Rating prediction: 3.8797604069770784
+Rating prediction: 3.8797604069770775
 **********************************
 4) ID: 6794 Title: Beethoven's 2nd (1993)
-Rating prediction: 3.8737565000535774
+Rating prediction: 3.873756500053577
 **********************************
 5) ID: 69275 Title: Dead Snow (Død snø) (2009)
-Rating prediction: 3.8481227377567606
+Rating prediction: 3.848122737756761
 **********************************
 6) ID: 72407 Title: Twilight Saga: New Moon, The (2009)
-Rating prediction: 3.845032856608198
+Rating prediction: 3.845032856608199
 **********************************
 7) ID: 62336 Title: FLCL (2000)
-Rating prediction: 3.830743886234508
+Rating prediction: 3.830743886234509
 **********************************
 8) ID: 5903 Title: Equilibrium (2002)
-Rating prediction: 3.8225894002109753
+Rating prediction: 3.8225894002109744
 **********************************
 9) ID: 1088 Title: Dirty Dancing (1987)
 Rating prediction: 3.811169352967176
@@ -201,10 +201,10 @@ Rating prediction: 3.809553790636537
 Basket#####################################################################################################
 25) Top N recommendations for basket with item 1:
 1) ID: 3114 Title: Toy Story 2 (1999)
-Rating prediction: 0.3875190960771424
+Rating prediction: 0.3875190960771425
 **********************************
 2) ID: 2355 Title: Bug's Life, A (1998)
-Rating prediction: 0.2918505710072839
+Rating prediction: 0.29185057100728373
 **********************************
 3) ID: 364 Title: Lion King, The (1994)
 Rating prediction: 0.2679706395354096
@@ -213,28 +213,28 @@ Rating prediction: 0.2679706395354096
 Rating prediction: 0.24245219707788762
 **********************************
 5) ID: 4886 Title: Monsters, Inc. (2001)
-Rating prediction: 0.23609185999396143
+Rating prediction: 0.2360918599939614
 **********************************
 6) ID: 4306 Title: Shrek (2001)
-Rating prediction: 0.233792488723216
+Rating prediction: 0.23379248872321587
 **********************************
 7) ID: 58559 Title: Dark Knight, The (2008)
-Rating prediction: 0.22285149745651742
+Rating prediction: 0.2228514974565174
 **********************************
 8) ID: 5349 Title: Spider-Man (2002)
-Rating prediction: 0.22253962836326838
+Rating prediction: 0.22253962836326835
 **********************************
 9) ID: 1092 Title: Basic Instinct (1992)
-Rating prediction: 0.22136134667493132
+Rating prediction: 0.22136134667493143
 **********************************
 10) ID: 8961 Title: Incredibles, The (2004)
-Rating prediction: 0.22061205440681184
+Rating prediction: 0.2206120544068119
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 26) Top N recommendations for basket with items 1, 48, 239 (only positive similarities):
 1) ID: 2355 Title: Bug's Life, A (1998)
-Rating prediction: 0.6332192482383021
+Rating prediction: 0.6332192482383019
 **********************************
 2) ID: 3810 Title: White Sands (1992)
 Rating prediction: 0.5908157457013644
@@ -255,7 +255,7 @@ Rating prediction: 0.5325588921786968
 Rating prediction: 0.5266741503467427
 **********************************
 8) ID: 3114 Title: Toy Story 2 (1999)
-Rating prediction: 0.49995186300215533
+Rating prediction: 0.49995186300215544
 **********************************
 9) ID: 2531 Title: Battle for the Planet of the Apes (1973)
 Rating prediction: 0.4931761460738656
@@ -267,7 +267,7 @@ Rating prediction: 0.4929426694258981
 ---------------------------------------------------------------------------------------------------------
 27) Top N recommendations for basket with items 1, 48, 239 (all similarities):
 1) ID: 2355 Title: Bug's Life, A (1998)
-Rating prediction: 0.6332192482383021
+Rating prediction: 0.6332192482383019
 **********************************
 2) ID: 364 Title: Lion King, The (1994)
 Rating prediction: 0.5853370435975433
@@ -279,7 +279,7 @@ Rating prediction: 0.5754033369218359
 Rating prediction: 0.5189877437623069
 **********************************
 5) ID: 3114 Title: Toy Story 2 (1999)
-Rating prediction: 0.49995186300215533
+Rating prediction: 0.49995186300215544
 **********************************
 6) ID: 5066 Title: Walk to Remember, A (2002)
 Rating prediction: 0.4816239187521647
@@ -291,7 +291,7 @@ Rating prediction: 0.47165016615653227
 Rating prediction: 0.46459440896404697
 **********************************
 9) ID: 103341 Title: World's End, The (2013)
-Rating prediction: 0.44673547494869537
+Rating prediction: 0.4467354749486955
 **********************************
 10) ID: 13 Title: Balto (1995)
 Rating prediction: 0.4464494427744053
@@ -305,19 +305,19 @@ Hybrid##########################################################################
 Rating prediction: 4.785879967737465
 **********************************
 2) ID: 40412 Title: Dead Man's Shoes (2004)
-Rating prediction: 4.489902887909706
+Rating prediction: 4.4899028879097065
 **********************************
 3) ID: 2304 Title: Love Is the Devil (1998)
-Rating prediction: 4.120966372009208
+Rating prediction: 4.120966372009207
 **********************************
 4) ID: 4518 Title: The Lair of the White Worm (1988)
-Rating prediction: 4.094669351883896
+Rating prediction: 4.094669351883895
 **********************************
 5) ID: 85438 Title: Jane Eyre (2011)
 Rating prediction: 4.085897159325705
 **********************************
 6) ID: 85179 Title: Summer Wars (Samâ wôzu) (2009)
-Rating prediction: 4.072171156824381
+Rating prediction: 4.07217115682438
 **********************************
 7) ID: 6063 Title: May (2002)
 Rating prediction: 4.071367959413578
