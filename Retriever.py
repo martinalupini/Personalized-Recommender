@@ -57,6 +57,15 @@ def compute_similarities(movies_dict):
                 pos_sim += 1
                 file.write(movie + ":"+movie_2+":"+str(sim)+"\n")
 
+            if movie == "3074" and movie_2 == "6565":
+                print("users in common " + str(users_in_common))
+                print("numerator " + str(numerator))
+                print("norm_1 " + str(movies_dict[movie]["Denominator"]))
+                print("norm_2 " + str(movies_dict[movie_2]["Denominator"]))
+                print("mean_1 " + str(movies_dict[movie]["Mean"]))
+                print("mean_2 " + str(movies_dict[movie_2]["Mean"]))
+                print("sim " + str(sim))
+
         sim_dict[(movie, movie_2)] = sim
         sim_dict[(movie_2, movie)] = sim
 
@@ -102,7 +111,6 @@ def retrieve_ratings_IICF(movies_dict, movies_to_idx):
                     movies_dict[movie_id]["Users_who_rated"] = set()
                     movies_dict[movie_id]["rating_vect"] = []
 
-
                 movies_dict[movie_id]["Ratings"][user_id] = float(rating)
                 movies_dict[movie_id]["Users_who_rated"].add(user_id)
                 movies_dict[movie_id]["rating_vect"].append(float(rating))
@@ -117,15 +125,13 @@ def retrieve_ratings_IICF(movies_dict, movies_to_idx):
     for movie in movies_dict:
         if "Ratings" not in movies_dict[movie]:
             movies_dict[movie]["Users_who_rated"] = set()
-            movies_dict[movie_id]["rating_vect"] = []
+            movies_dict[movie]["rating_vect"] = []
             movies_dict[movie]["Ratings"] = {}
             movies_dict[movie]["Mean"] = 0.0
             movies_dict[movie]["Denominator"] = 0.0
             continue
-        if len(movies_dict[movie]["rating_vect"]) == 0:
-            mean = 0.0
-        else:
-            mean = np.mean(movies_dict[movie]["rating_vect"])
+
+        mean = np.mean(movies_dict[movie]["rating_vect"])
         for user in movies_dict[movie]["Users_who_rated"]:
             movies_dict[movie]["Ratings"][user] -= mean
         movies_dict[movie]["Mean"] = mean
