@@ -51,7 +51,7 @@ def compute_similarities(movies_dict):
                 numerator += (movies_dict[movie]["Ratings"][user] * movies_dict[movie_2]["Ratings"][user])
 
             denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
-            sim = float(numerator / denominator) if denominator != 0 else 0.0
+            sim = numerator / denominator if denominator != 0 else 0.0
 
             if sim > 0:
                 pos_sim += 1
