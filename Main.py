@@ -59,7 +59,7 @@ def main():
     f.write("\nIICF#####################################################################################################\n")
     f.write("19) Number of positive similarities: " + str(pos_sim))
     f.write("\n---------------------------------------------------------------------------------------------------------\n")
-    f.write("20) Cosine similarity between users 594 and 596: " + str(sim_dict[("594","596")]))
+    f.write("20) Cosine similarity between users 594 and 596: " + str(round(sim_dict[("594","596")], 6)))
     f.write("\n---------------------------------------------------------------------------------------------------------\n")
     top_k_neigh, all_neigh = top_k_similar_items("522", "25", user_dict, sim_dict)
     f.write("21) Number of similar items to item 25 and user 522 (strictly positive): " + str(len(all_neigh)))

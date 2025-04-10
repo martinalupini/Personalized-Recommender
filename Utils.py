@@ -15,7 +15,7 @@ def write_top_k_most_similar(top_k_neigh, movie_dict, f):
 def print_recommendations(rating_list, movie_dict, file):
     index = 1
     for movie in rating_list:
-        file.write(str(index) + ") ID: " + movie + " Title: " + movie_dict[movie]["Title"] +
+        file.write(str(index) + ") ID: " + movie + " Title: " + movie_dict[movie]["Title"] + ",\ngenres: " + str(movie_dict[movie]["Genres_list"]) +
                    "\nRating prediction: " + str(round(rating_list[movie], 6)) + "\n**********************************\n")
         index += 1
 

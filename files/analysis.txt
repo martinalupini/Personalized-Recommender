@@ -68,67 +68,87 @@ UUCF############################################################################
 14) Title of movie 260: Star Wars: Episode IV - A New Hope (1977)
 ---------------------------------------------------------------------------------------------------------
 16) Top N recommendations for user 1:
-1) ID: 3216 Title: Vampyros Lesbos (Vampiras, Las) (1971)
+1) ID: 3216 Title: Vampyros Lesbos (Vampiras, Las) (1971),
+genres: ['Fantasy', 'Horror', 'Thriller']
 Rating prediction: 4.936834
 **********************************
-2) ID: 40412 Title: Dead Man's Shoes (2004)
+2) ID: 40412 Title: Dead Man's Shoes (2004),
+genres: ['Crime', 'Thriller']
 Rating prediction: 4.936834
 **********************************
-3) ID: 92494 Title: Dylan Moran: Monster (2004)
+3) ID: 92494 Title: Dylan Moran: Monster (2004),
+genres: ['Comedy', 'Documentary']
 Rating prediction: 4.936834
 **********************************
-4) ID: 3320 Title: Mifune's Last Song (Mifunes sidste sang) (1999)
+4) ID: 3320 Title: Mifune's Last Song (Mifunes sidste sang) (1999),
+genres: ['Comedy', 'Drama', 'Romance']
 Rating prediction: 4.928235
 **********************************
-5) ID: 4302 Title: King Is Alive, The (2000)
+5) ID: 4302 Title: King Is Alive, The (2000),
+genres: ['Drama']
 Rating prediction: 4.928235
 **********************************
-6) ID: 4731 Title: Innocence (2000)
+6) ID: 4731 Title: Innocence (2000),
+genres: ['Drama']
 Rating prediction: 4.928235
 **********************************
-7) ID: 5071 Title: Maelström (2000)
+7) ID: 5071 Title: Maelström (2000),
+genres: ['Drama', 'Romance']
 Rating prediction: 4.928235
 **********************************
-8) ID: 86781 Title: Incendies (2010)
+8) ID: 86781 Title: Incendies (2010),
+genres: ['Drama', 'Mystery', 'War']
 Rating prediction: 4.928235
 **********************************
-9) ID: 97957 Title: Excision (2012)
+9) ID: 97957 Title: Excision (2012),
+genres: ['Crime', 'Drama', 'Horror', 'Thriller']
 Rating prediction: 4.717883
 **********************************
-10) ID: 3414 Title: Love Is a Many-Splendored Thing (1955)
+10) ID: 3414 Title: Love Is a Many-Splendored Thing (1955),
+genres: ['Drama', 'Romance', 'War']
 Rating prediction: 4.543621
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 17) Top N recommendations for user 522:
-1) ID: 565 Title: Cronos (1993)
+1) ID: 565 Title: Cronos (1993),
+genres: ['Drama', 'Horror']
 Rating prediction: 6.180286
 **********************************
-2) ID: 1450 Title: Prisoner of the Mountains (Kavkazsky plennik) (1996)
+2) ID: 1450 Title: Prisoner of the Mountains (Kavkazsky plennik) (1996),
+genres: ['War']
 Rating prediction: 6.180286
 **********************************
-3) ID: 1563 Title: Dream With the Fishes (1997)
+3) ID: 1563 Title: Dream With the Fishes (1997),
+genres: ['Drama']
 Rating prediction: 6.180286
 **********************************
-4) ID: 1819 Title: Storefront Hitchcock (1997)
+4) ID: 1819 Title: Storefront Hitchcock (1997),
+genres: ['Documentary', 'Musical']
 Rating prediction: 6.180286
 **********************************
-5) ID: 4076 Title: Two Ninas (1999)
+5) ID: 4076 Title: Two Ninas (1999),
+genres: ['Comedy', 'Romance']
 Rating prediction: 6.180286
 **********************************
-6) ID: 4591 Title: Erik the Viking (1989)
+6) ID: 4591 Title: Erik the Viking (1989),
+genres: ['Adventure', 'Comedy', 'Fantasy']
 Rating prediction: 6.180286
 **********************************
-7) ID: 4796 Title: Grass Is Greener, The (1960)
+7) ID: 4796 Title: Grass Is Greener, The (1960),
+genres: ['Comedy', 'Romance']
 Rating prediction: 6.180286
 **********************************
-8) ID: 4930 Title: Funeral in Berlin (1966)
+8) ID: 4930 Title: Funeral in Berlin (1966),
+genres: ['Action', 'Drama', 'Thriller']
 Rating prediction: 6.180286
 **********************************
-9) ID: 5427 Title: Caveman (1981)
+9) ID: 5427 Title: Caveman (1981),
+genres: ['Comedy']
 Rating prediction: 6.180286
 **********************************
-10) ID: 3216 Title: Vampyros Lesbos (Vampiras, Las) (1971)
+10) ID: 3216 Title: Vampyros Lesbos (Vampiras, Las) (1971),
+genres: ['Fantasy', 'Horror', 'Thriller']
 Rating prediction: 5.552834
 **********************************
 
@@ -137,7 +157,7 @@ Rating prediction: 5.552834
 IICF#####################################################################################################
 19) Number of positive similarities: 4390396
 ---------------------------------------------------------------------------------------------------------
-20) Cosine similarity between users 594 and 596: 0.31043233186829394
+20) Cosine similarity between users 594 and 596: 0.310432
 ---------------------------------------------------------------------------------------------------------
 21) Number of similar items to item 25 and user 522 (strictly positive): 160
 ---------------------------------------------------------------------------------------------------------
@@ -165,34 +185,44 @@ IICF############################################################################
 
 ---------------------------------------------------------------------------------------------------------
 24) Top N recommendations for user 522:
-1) ID: 1232 Title: Stalker (1979)
+1) ID: 1232 Title: Stalker (1979),
+genres: ['Drama', 'Mystery', 'Sci-Fi']
 Rating prediction: 3.912456
 **********************************
-2) ID: 5690 Title: Grave of the Fireflies (Hotaru no haka) (1988)
+2) ID: 5690 Title: Grave of the Fireflies (Hotaru no haka) (1988),
+genres: ['Animation', 'Drama', 'War']
 Rating prediction: 3.894039
 **********************************
-3) ID: 58998 Title: Forgetting Sarah Marshall (2008)
+3) ID: 58998 Title: Forgetting Sarah Marshall (2008),
+genres: ['Comedy', 'Romance']
 Rating prediction: 3.87976
 **********************************
-4) ID: 6794 Title: Beethoven's 2nd (1993)
+4) ID: 6794 Title: Beethoven's 2nd (1993),
+genres: ['Children', 'Comedy']
 Rating prediction: 3.873757
 **********************************
-5) ID: 69275 Title: Dead Snow (Død snø) (2009)
+5) ID: 69275 Title: Dead Snow (Død snø) (2009),
+genres: ['Action', 'Adventure', 'Comedy', 'Horror']
 Rating prediction: 3.848123
 **********************************
-6) ID: 72407 Title: Twilight Saga: New Moon, The (2009)
+6) ID: 72407 Title: Twilight Saga: New Moon, The (2009),
+genres: ['Drama', 'Fantasy', 'Horror', 'Romance', 'Thriller']
 Rating prediction: 3.845033
 **********************************
-7) ID: 62336 Title: FLCL (2000)
+7) ID: 62336 Title: FLCL (2000),
+genres: ['Animation', 'Comedy', 'Fantasy', 'Sci-Fi']
 Rating prediction: 3.830744
 **********************************
-8) ID: 5903 Title: Equilibrium (2002)
+8) ID: 5903 Title: Equilibrium (2002),
+genres: ['Action', 'Sci-Fi', 'Thriller']
 Rating prediction: 3.822589
 **********************************
-9) ID: 1088 Title: Dirty Dancing (1987)
+9) ID: 1088 Title: Dirty Dancing (1987),
+genres: ['Drama', 'Musical', 'Romance']
 Rating prediction: 3.811169
 **********************************
-10) ID: 37475 Title: Unfinished Life, An (2005)
+10) ID: 37475 Title: Unfinished Life, An (2005),
+genres: ['Drama']
 Rating prediction: 3.809554
 **********************************
 
@@ -200,100 +230,130 @@ Rating prediction: 3.809554
 
 Basket#####################################################################################################
 25) Top N recommendations for basket with item 1:
-1) ID: 3114 Title: Toy Story 2 (1999)
+1) ID: 3114 Title: Toy Story 2 (1999),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy', 'Fantasy']
 Rating prediction: 0.387519
 **********************************
-2) ID: 2355 Title: Bug's Life, A (1998)
+2) ID: 2355 Title: Bug's Life, A (1998),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy']
 Rating prediction: 0.291851
 **********************************
-3) ID: 364 Title: Lion King, The (1994)
+3) ID: 364 Title: Lion King, The (1994),
+genres: ['Adventure', 'Animation', 'Children', 'Drama', 'Musical', 'IMAX']
 Rating prediction: 0.267971
 **********************************
-4) ID: 588 Title: Aladdin (1992)
+4) ID: 588 Title: Aladdin (1992),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy', 'Musical']
 Rating prediction: 0.242452
 **********************************
-5) ID: 4886 Title: Monsters, Inc. (2001)
+5) ID: 4886 Title: Monsters, Inc. (2001),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy', 'Fantasy']
 Rating prediction: 0.236092
 **********************************
-6) ID: 4306 Title: Shrek (2001)
+6) ID: 4306 Title: Shrek (2001),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy', 'Fantasy', 'Romance']
 Rating prediction: 0.233792
 **********************************
-7) ID: 58559 Title: Dark Knight, The (2008)
+7) ID: 58559 Title: Dark Knight, The (2008),
+genres: ['Action', 'Crime', 'Drama', 'IMAX']
 Rating prediction: 0.222851
 **********************************
-8) ID: 5349 Title: Spider-Man (2002)
+8) ID: 5349 Title: Spider-Man (2002),
+genres: ['Action', 'Adventure', 'Sci-Fi', 'Thriller']
 Rating prediction: 0.22254
 **********************************
-9) ID: 1092 Title: Basic Instinct (1992)
+9) ID: 1092 Title: Basic Instinct (1992),
+genres: ['Crime', 'Mystery', 'Thriller']
 Rating prediction: 0.221361
 **********************************
-10) ID: 8961 Title: Incredibles, The (2004)
+10) ID: 8961 Title: Incredibles, The (2004),
+genres: ['Action', 'Adventure', 'Animation', 'Children', 'Comedy']
 Rating prediction: 0.220612
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 26) Top N recommendations for basket with items 1, 48, 239 (only positive similarities):
-1) ID: 2355 Title: Bug's Life, A (1998)
+1) ID: 2355 Title: Bug's Life, A (1998),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy']
 Rating prediction: 0.633219
 **********************************
-2) ID: 3810 Title: White Sands (1992)
+2) ID: 3810 Title: White Sands (1992),
+genres: ['Drama', 'Thriller']
 Rating prediction: 0.590816
 **********************************
-3) ID: 364 Title: Lion King, The (1994)
+3) ID: 364 Title: Lion King, The (1994),
+genres: ['Adventure', 'Animation', 'Children', 'Drama', 'Musical', 'IMAX']
 Rating prediction: 0.585337
 **********************************
-4) ID: 3807 Title: Sinbad and the Eye of the Tiger (1977)
+4) ID: 3807 Title: Sinbad and the Eye of the Tiger (1977),
+genres: ['Adventure', 'Fantasy']
 Rating prediction: 0.585142
 **********************************
-5) ID: 2089 Title: Rescuers Down Under, The (1990)
+5) ID: 2089 Title: Rescuers Down Under, The (1990),
+genres: ['Adventure', 'Animation', 'Children']
 Rating prediction: 0.575403
 **********************************
-6) ID: 54276 Title: No Reservations (2007)
+6) ID: 54276 Title: No Reservations (2007),
+genres: ['Comedy', 'Drama', 'Romance']
 Rating prediction: 0.532559
 **********************************
-7) ID: 2772 Title: Detroit Rock City (1999)
+7) ID: 2772 Title: Detroit Rock City (1999),
+genres: ['Comedy']
 Rating prediction: 0.526674
 **********************************
-8) ID: 3114 Title: Toy Story 2 (1999)
+8) ID: 3114 Title: Toy Story 2 (1999),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy', 'Fantasy']
 Rating prediction: 0.499952
 **********************************
-9) ID: 2531 Title: Battle for the Planet of the Apes (1973)
+9) ID: 2531 Title: Battle for the Planet of the Apes (1973),
+genres: ['Action', 'Sci-Fi']
 Rating prediction: 0.493176
 **********************************
-10) ID: 2045 Title: Far Off Place, A (1993)
+10) ID: 2045 Title: Far Off Place, A (1993),
+genres: ['Adventure', 'Children', 'Drama', 'Romance']
 Rating prediction: 0.492943
 **********************************
 
 ---------------------------------------------------------------------------------------------------------
 27) Top N recommendations for basket with items 1, 48, 239 (all similarities):
-1) ID: 2355 Title: Bug's Life, A (1998)
+1) ID: 2355 Title: Bug's Life, A (1998),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy']
 Rating prediction: 0.633219
 **********************************
-2) ID: 364 Title: Lion King, The (1994)
+2) ID: 364 Title: Lion King, The (1994),
+genres: ['Adventure', 'Animation', 'Children', 'Drama', 'Musical', 'IMAX']
 Rating prediction: 0.585337
 **********************************
-3) ID: 2089 Title: Rescuers Down Under, The (1990)
+3) ID: 2089 Title: Rescuers Down Under, The (1990),
+genres: ['Adventure', 'Animation', 'Children']
 Rating prediction: 0.575403
 **********************************
-4) ID: 54276 Title: No Reservations (2007)
+4) ID: 54276 Title: No Reservations (2007),
+genres: ['Comedy', 'Drama', 'Romance']
 Rating prediction: 0.518988
 **********************************
-5) ID: 3114 Title: Toy Story 2 (1999)
+5) ID: 3114 Title: Toy Story 2 (1999),
+genres: ['Adventure', 'Animation', 'Children', 'Comedy', 'Fantasy']
 Rating prediction: 0.499952
 **********************************
-6) ID: 5066 Title: Walk to Remember, A (2002)
+6) ID: 5066 Title: Walk to Remember, A (2002),
+genres: ['Drama', 'Romance']
 Rating prediction: 0.481624
 **********************************
-7) ID: 783 Title: Hunchback of Notre Dame, The (1996)
+7) ID: 783 Title: Hunchback of Notre Dame, The (1996),
+genres: ['Animation', 'Children', 'Drama', 'Musical', 'Romance']
 Rating prediction: 0.47165
 **********************************
-8) ID: 7045 Title: Witches, The (1990)
+8) ID: 7045 Title: Witches, The (1990),
+genres: ['Children', 'Fantasy']
 Rating prediction: 0.464594
 **********************************
-9) ID: 103341 Title: World's End, The (2013)
+9) ID: 103341 Title: World's End, The (2013),
+genres: ['Action', 'Comedy', 'Sci-Fi']
 Rating prediction: 0.446735
 **********************************
-10) ID: 13 Title: Balto (1995)
+10) ID: 13 Title: Balto (1995),
+genres: ['Adventure', 'Animation', 'Children']
 Rating prediction: 0.446449
 **********************************
 
@@ -301,33 +361,43 @@ Rating prediction: 0.446449
 
 Hybrid#####################################################################################################
 29) Top N recommendations hybrid for user 522:
-1) ID: 565 Title: Cronos (1993)
+1) ID: 565 Title: Cronos (1993),
+genres: ['Drama', 'Horror']
 Rating prediction: 4.78588
 **********************************
-2) ID: 40412 Title: Dead Man's Shoes (2004)
+2) ID: 40412 Title: Dead Man's Shoes (2004),
+genres: ['Crime', 'Thriller']
 Rating prediction: 4.489903
 **********************************
-3) ID: 2304 Title: Love Is the Devil (1998)
+3) ID: 2304 Title: Love Is the Devil (1998),
+genres: ['Drama']
 Rating prediction: 4.120966
 **********************************
-4) ID: 4518 Title: The Lair of the White Worm (1988)
+4) ID: 4518 Title: The Lair of the White Worm (1988),
+genres: ['Comedy', 'Horror']
 Rating prediction: 4.094669
 **********************************
-5) ID: 85438 Title: Jane Eyre (2011)
+5) ID: 85438 Title: Jane Eyre (2011),
+genres: ['Drama', 'Romance']
 Rating prediction: 4.085897
 **********************************
-6) ID: 85179 Title: Summer Wars (Samâ wôzu) (2009)
+6) ID: 85179 Title: Summer Wars (Samâ wôzu) (2009),
+genres: ['Adventure', 'Animation', 'Comedy', 'Sci-Fi']
 Rating prediction: 4.072171
 **********************************
-7) ID: 6063 Title: May (2002)
+7) ID: 6063 Title: May (2002),
+genres: ['Drama', 'Horror']
 Rating prediction: 4.071368
 **********************************
-8) ID: 26587 Title: Decalogue, The (Dekalog) (1989)
+8) ID: 26587 Title: Decalogue, The (Dekalog) (1989),
+genres: ['Crime', 'Drama', 'Romance']
 Rating prediction: 4.059823
 **********************************
-9) ID: 1564 Title: For Roseanna (Roseanna's Grave) (1997)
+9) ID: 1564 Title: For Roseanna (Roseanna's Grave) (1997),
+genres: ['Comedy', 'Drama', 'Romance']
 Rating prediction: 4.049276
 **********************************
-10) ID: 1860 Title: Character (Karakter) (1997)
+10) ID: 1860 Title: Character (Karakter) (1997),
+genres: ['Drama']
 Rating prediction: 4.040194
 **********************************
