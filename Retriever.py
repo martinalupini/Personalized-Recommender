@@ -42,10 +42,7 @@ def compute_similarities(movies_dict):
 
         users_in_common = movies_dict[movie]["Users_who_rated"] & movies_dict[movie_2]["Users_who_rated"]
 
-        if len(users_in_common) < 1:
-            sim = 0.0
-
-        else:
+        if len(users_in_common) > 0:
             numerator = 0.0
             for user in users_in_common:
                 numerator += (movies_dict[movie]["Ratings"][user] * movies_dict[movie_2]["Ratings"][user])
@@ -54,14 +51,13 @@ def compute_similarities(movies_dict):
             sim = numerator / denominator if denominator != 0 else 0.0
 
             if math.isclose(sim, 0, abs_tol=1e-10):
-                sim = 0.0
+                continue
 
             if sim > 0:
                 pos_sim += 1
                 #file.write(movie + ":"+movie_2+":"+str(sim)+"\n")
 
-        sim_dict[(movie, movie_2)] = sim
-        sim_dict[(movie_2, movie)] = sim
+            sim_dict[(movie, movie_2)] = sim
 
     print("--- %s seconds ---" % (time.time() - start_time))
     #file.close

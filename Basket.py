@@ -15,7 +15,12 @@ def top_N_recommendations_basket(basket, movie_dict, sim_dict, only_positive=Tru
             if movie not in recommendations:
                 recommendations[movie] = 0.0
 
-            sim = sim_dict[(item, movie)]
+            if (item, movie) in sim_dict:
+                sim = sim_dict[(item, movie)]
+            elif (movie, item) in sim_dict:
+                sim = sim_dict[(movie, item)]
+            else:
+                sim = 0.0
 
             if sim > 0 or not only_positive:
                 recommendations[movie] += sim

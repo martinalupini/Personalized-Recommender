@@ -11,7 +11,12 @@ def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
         if movie == item:
             continue
 
-        sim = sim_dict[(item, movie)]
+        if (item, movie) in sim_dict:
+            sim = sim_dict[(item, movie)]
+        elif (movie, item) in sim_dict:
+            sim = sim_dict[(movie, item)]
+        else:
+            sim = 0
 
         # Considering only positive similarities
         if sim > 0:
@@ -35,9 +40,17 @@ def predict_score_IICF(user, item, user_dict, sim_dict):
     numerator = 0.0
     denominator = 0.0
     for elem in neighbours:
-        sim = sim_dict[(elem, item)]
+        if (elem, item) in sim_dict:
+            sim = sim_dict[(elem, item)]
+        elif (item, elem) in sim_dict:
+            sim = sim_dict[(item, elem)]
+        else:
+            continue
         numerator += sim * user_dict[user]["Movies_rated"][elem]["Rating"]
         denominator += abs(sim)
+
+    if denominator == 0:
+        return 0.0
 
     return float(numerator / denominator)
 
