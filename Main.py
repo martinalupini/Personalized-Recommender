@@ -1,6 +1,6 @@
 __author__ = 'Martina Lupini'
 
-
+import time
 from Retriever import *
 from Basket import *
 from Utils import *
@@ -8,6 +8,8 @@ from Utils import *
 
 def main():
 
+    start_time = time.time()
+    print("The code is now started. The computation of the results might take a while.")
     movies_dict, movies_to_idx = retrieve_movies()
     user_dict = retrieve_ratings_IICF(movies_dict, movies_to_idx)
     sim_dict, pos_sim = compute_similarities(movies_dict)
@@ -90,6 +92,7 @@ def main():
     f.write("29) Top N recommendations hybrid for user 522:\n")
     top_N = top_N_recommendations_hybrid("522", user_dict, movies_dict, sim_dict, movies_to_idx)
     print_recommendations(top_N, movies_dict, f)
+    print("--- Time to execute entire code: %s seconds ---" % (time.time() - start_time))
 
 
 if __name__ == "__main__":

@@ -1,16 +1,17 @@
 __author__ = 'Martina Lupini'
 
 import numpy as np
-import numpy.ma as ma
-import math
 from itertools import islice
 
-
+"""
+This method computes the Pearson correlation between two users.
+"""
 def pearson_correlation(user_1, user_2, user_dict, cut_off_value=10):
     movies_in_common = np.logical_and(user_dict[user_1]['OHE_ratings'], user_dict[user_2]['OHE_ratings']).astype(int)
 
     num_movies_in_common = np.count_nonzero(movies_in_common)
 
+    # If the users have 0 or 1 items in common then the weight of correlation is 0
     if num_movies_in_common <= 1:
         return 0.0, 0.0
 
@@ -33,6 +34,9 @@ def pearson_correlation(user_1, user_2, user_dict, cut_off_value=10):
     return float(weight), float(weight_significance)
 
 
+"""
+This method computes top k neighbours given a user and a movie.
+"""
 def top_k_neighbours(main_user, item_of_interest, user_dict, k=20):
     weights = {}
     for user in user_dict:
@@ -41,7 +45,10 @@ def top_k_neighbours(main_user, item_of_interest, user_dict, k=20):
         if item_of_interest not in user_dict[user]['Movies_rated']:
             continue
 
+        # Calculating similarity value
         _, sim = pearson_correlation(main_user, user, user_dict)
+
+        # Only considering users with positive similarity
         if sim > 0:
             weights[user] = sim
 
@@ -58,10 +65,16 @@ def top_k_neighbours(main_user, item_of_interest, user_dict, k=20):
     return neighbours, sorted_dict
 
 
+"""
+This method predicts the rating of a movie given a user.
+"""
 def predict_rating(main_user, item, user_dict, movies_to_idx):
+    # Getting average rating of user
     avg_rating = user_dict[main_user]['average_rating']
     denominator = 0.0
     numerator = 0.0
+
+    # Finding top k neighbours
     neighbors, _ = top_k_neighbours(main_user, item, user_dict)
 
     for user in neighbors:
@@ -75,6 +88,9 @@ def predict_rating(main_user, item, user_dict, movies_to_idx):
     return float(avg_rating + (numerator / denominator)), float((numerator / denominator))
 
 
+"""
+This method returns the top N recommendations calculated using UUCF.
+"""
 def top_N_recommendations_UUCF(main_user, user_dict, movie_dict, movies_to_idx, N=10):
     score_dict = {}
 
@@ -84,9 +100,10 @@ def top_N_recommendations_UUCF(main_user, user_dict, movie_dict, movies_to_idx, 
         if movie in user_dict[main_user]['Movies_rated']:
             continue
 
+        # Predict rating for movie
         score_dict[movie], _ = predict_rating(main_user, movie, user_dict, movies_to_idx)
 
-    # Sorting the dictionary based on the similarity (descending order)
+    # Sorting the dictionary based on the predicted rating (descending order)
     sorted_dict = dict(sorted(score_dict.items(), key=lambda item: item[1], reverse=True))
 
     # Returning only the first N elements

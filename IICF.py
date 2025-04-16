@@ -1,9 +1,11 @@
 __author__ = 'Martina Lupini'
 
-import math
 from itertools import islice
 
 
+"""
+This method computes top k most similar items rated by a target user.
+"""
 def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
     similarities = {}
     for movie in user_dict[user]["Movies_rated"].keys():
@@ -25,15 +27,24 @@ def top_k_similar_items(user, item, user_dict, sim_dict, k=20):
     # Sorting the dictionary based on the similarity (descending order)
     sorted_dict = dict(sorted(similarities.items(), key=lambda item: item[1], reverse=True))
 
+    # If there are not 20 elements then we select a smaller neighbourhood
+    if len(sorted_dict) < k:
+        k = len(sorted_dict)
+
     # Returning only the first k elements
     neighbours = dict(islice(sorted_dict.items(), k))
 
     return neighbours, similarities
 
 
+"""
+This method predicts the rating of a movie given a user.
+"""
 def predict_score_IICF(user, item, user_dict, sim_dict):
+    # Obtaining the top k most similar items
     neighbours, _ = top_k_similar_items(user, item, user_dict, sim_dict)
 
+    # If there are no similar items then the predicted rating is 0
     if len(neighbours) == 0:
         return 0.0
 
@@ -55,9 +66,11 @@ def predict_score_IICF(user, item, user_dict, sim_dict):
     return float(numerator / denominator)
 
 
+"""
+This method returns the top N recommendations calculated using IICF.
+"""
 def top_N_recommendations_IICF(user, user_dict, movies_dict, sim_dict, N=10):
     recommendations = {}
-    print("top_N_recommendations_IICF")
     for movie in movies_dict:
 
         # Not suggesting movies already watched by the user

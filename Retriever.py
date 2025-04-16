@@ -4,9 +4,11 @@ import csv
 import numpy as np
 import math
 from itertools import combinations
-import time
 
 
+"""
+This method retrieves movies' information.
+"""
 def retrieve_movies():
     movies_dict = {}
 
@@ -28,12 +30,13 @@ def retrieve_movies():
     return movies_dict, movies_to_idx
 
 
+"""
+This method computes item-item similarities.
+"""
 def compute_similarities(movies_dict):
     sim_dict = {}
     pos_sim = 0
     #file = open("files/sim_pos.txt", "w")
-    print("compute_similarities")
-    start_time = time.time()
 
     # Generating only unique pairs of movies since the relationship is symmetric
     movie_pairs = combinations(movies_dict.keys(), 2)
@@ -42,6 +45,7 @@ def compute_similarities(movies_dict):
 
         users_in_common = movies_dict[movie]["Users_who_rated"] & movies_dict[movie_2]["Users_who_rated"]
 
+        # If the number of users in common is 0 then the similarity is 0 and does not need to be stored
         if len(users_in_common) > 0:
             numerator = 0.0
             for user in users_in_common:
@@ -50,6 +54,7 @@ def compute_similarities(movies_dict):
             denominator = movies_dict[movie]["Denominator"] * movies_dict[movie_2]["Denominator"]
             sim = numerator / denominator if denominator != 0 else 0.0
 
+            # If the similarity is the order of e-10 then it is approximated to 0
             if math.isclose(sim, 0, abs_tol=1e-10):
                 continue
 
@@ -57,14 +62,17 @@ def compute_similarities(movies_dict):
                 pos_sim += 1
                 #file.write(movie + ":"+movie_2+":"+str(sim)+"\n")
 
+            # Saving similarity value in a dictionary
             sim_dict[(movie, movie_2)] = sim
 
-    print("--- %s seconds ---" % (time.time() - start_time))
     #file.close
 
     return sim_dict, pos_sim
 
 
+"""
+This method creates a vector containing all the ratings given by the users normalized.
+"""
 def create_ratings_vector(user_dict, movies_to_idx):
     for user in user_dict:
         avg_rating = 0.0
@@ -88,7 +96,6 @@ This method adds the information about the rating to the movies saved in the dic
 """
 def retrieve_ratings_IICF(movies_dict, movies_to_idx):
     user_dict = {}
-    print("retrieve_ratings_IICF")
     with open("dataset/ratings.csv", "r", encoding='utf-8') as file:
         next(file)
         csvFile = csv.reader(file)
